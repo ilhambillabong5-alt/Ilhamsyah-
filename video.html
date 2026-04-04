@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Treasure Video</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background: radial-gradient(circle,#020617,#1e293b);
+    color:#facc15;
+}
+
+/* Navbar */
+nav{
+    display:flex;
+    justify-content:space-between;
+    padding:20px 50px;
+    background: rgba(0,0,0,0.7);
+}
+
+nav h1{
+    font-family:'Pirata One';
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav li{
+    margin-left:20px;
+}
+
+nav a{
+    color:#facc15;
+    text-decoration:none;
+}
+
+nav a:hover{
+    color:white;
+}
+
+/* Container */
+.container{
+    text-align:center;
+    padding:50px;
+}
+
+.container h2{
+    font-family:'Pirata One';
+    font-size:2.5rem;
+    margin-bottom:30px;
+}
+
+/* Treasure Chest (Video Box) */
+.video-box{
+    display:inline-block;
+    padding:20px;
+    border:4px solid gold;
+    border-radius:20px;
+    background: rgba(0,0,0,0.6);
+    box-shadow:0 0 25px rgba(250,204,21,0.6);
+    position:relative;
+}
+
+/* Icon peti */
+.video-box::before{
+    content:"🏴‍☠️";
+    position:absolute;
+    top:-20px;
+    left:-20px;
+    font-size:2rem;
+}
+
+/* Video */
+video{
+    width:600px;
+    max-width:100%;
+    border-radius:15px;
+}
+
+/* Glow animation */
+@keyframes glow{
+    0%{box-shadow:0 0 10px gold;}
+    50%{box-shadow:0 0 30px gold;}
+    100%{box-shadow:0 0 10px gold;}
+}
+
+.video-box:hover{
+    animation:glow 1.5s infinite;
+}
+
+/* Caption */
+.caption{
+    margin-top:15px;
+    font-style:italic;
+    opacity:0.8;
+}
+</style>
+
+</head>
+
+<body>
+
+<nav>
+    <h1>Treasure Video 🎥</h1>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="biodata.html">Biodata</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="video.html">Video</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <h2>Video Harta Karun 💎</h2>
+
+    <div class="video-box">
+        <video controls>
+            <source src="assets/video.mp4" type="video/mp4">
+        </video>
+        <div class="caption">Petualangan menemukan harta karun 🏝️</div>
+    </div>
+
+</div>
+
+</body>
+</html>
