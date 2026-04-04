@@ -1,16 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Biodata</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg,#1e293b,#0ea5e9);
+    color:white;
+}
+
+/* Navbar */
+nav{
+    display:flex;
+    justify-content:space-between;
+    padding:20px 50px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav li{
+    margin-left:20px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#facc15;
+}
+
+/* Container */
+.container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:85vh;
+}
+
+/* Card */
+.profile-card{
+    width:350px;
+    background: rgba(255,255,255,0.15);
+    border-radius:20px;
+    backdrop-filter: blur(15px);
+    box-shadow:0 10px 40px rgba(0,0,0,0.4);
+    text-align:center;
+    padding:30px;
+    transition:0.4s;
+}
+
+.profile-card:hover{
+    transform:translateY(-10px) scale(1.03);
+}
+
+/* Foto Profil */
+.profile-img{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    border:4px solid white;
+    margin-bottom:15px;
+}
+
+/* Nama */
+.profile-card h2{
+    margin-bottom:5px;
+}
+
+/* Info */
+.info{
+    margin-top:20px;
+    text-align:left;
+}
+
+.info p{
+    margin:10px 0;
+    padding:10px;
+    background: rgba(255,255,255,0.1);
+    border-radius:10px;
+}
+
+/* Badge */
+.badge{
+    display:inline-block;
+    margin-top:10px;
+    padding:5px 15px;
+    background:#facc15;
+    color:black;
+    border-radius:20px;
+    font-size:0.8rem;
+}
+</style>
+
+</head>
+
+<body>
+
 <nav>
     <h1>MyWebsite</h1>
     <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="biodata.html">Biodata</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="video.html">Video</a></li>
+    </ul>
 </nav>
 
 <div class="container">
-    <div class="card">
-        <h2>Biodata</h2>
-        <p>Nama: Ilhamsyah</p>
-        <p>NIM: 2310715210001</p>
-        <p>Jurusan: Sosial Ekonomi perikanan</p>
-        <p>Organisasi:- Mapala piranha (NRMP:602/A.0/Prh </p>
+
+    <div class="profile-card">
+        
+        <!-- FOTO (ganti dengan foto kamu) -->
+        <img src="assets/foto.jpg" alt="Foto Profil" class="profile-img">
+
+        <h2>Ilham</h2>
+        <span class="badge">Mahasiswa</span>
+
+        <div class="info">
+            <p><strong>Nama:</strong> 2310715210001</p>
+            <p><strong>NIM:</strong> 2310715210001</p>
+            <p><strong>Program study:</strong> Sosial Ekonomi Perikanan</p>
+            <p><strong>Email:</strong> ilhambillabong5@gmail.com</p>
+            <p><strong>Organisasi aktif:</strong> Mapala Piranha (NRMP:602/A.o/Prh)</p>
+        </div>
+
     </div>
+
 </div>
 
 </body>
