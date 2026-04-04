@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Gallery</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg,#0f172a,#1e293b);
+    color:white;
+}
+
+/* Navbar */
+nav{
+    display:flex;
+    justify-content:space-between;
+    padding:20px 50px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav li{
+    margin-left:20px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#38bdf8;
+}
+
+/* Container */
+.container{
+    padding:50px;
+    text-align:center;
+}
+
+.container h2{
+    margin-bottom:30px;
+}
+
+/* Gallery Grid */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+/* Card Image */
+.card{
+    position:relative;
+    overflow:hidden;
+    border-radius:15px;
+    cursor:pointer;
+}
+
+.card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    transition:0.5s;
+}
+
+/* Overlay */
+.overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    opacity:0;
+    transition:0.4s;
+    border-radius:15px;
+}
+
+.overlay p{
+    font-size:18px;
+}
+
+/* Hover Effect */
+.card:hover img{
+    transform:scale(1.2);
+}
+
+.card:hover .overlay{
+    opacity:1;
+}
+
+/* Animasi muncul */
+.card{
+    animation:fadeUp 1s ease;
+}
+
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(30px);}
+    to{opacity:1; transform:translateY(0);}
+}
+</style>
+
+</head>
+
+<body>
+
+<nav>
+    <h1>MyWebsite</h1>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="biodata.html">Biodata</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="video.html">Video</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <h2>My Gallery</h2>
+
+    <div class="gallery">
+
+        <div class="card">
+            <img src="assets/gambar1.jpg">
+            <div class="overlay"><p>Foto 1</p></div>
+        </div>
+
+        <div class="card">
+            <img src="assets/gambar2.jpg">
+            <div class="overlay"><p>Foto 2</p></div>
+        </div>
+
+        <div class="card">
+            <img src="assets/gambar3.jpg">
+            <div class="overlay"><p>Foto 3</p></div>
+        </div>
+
+        <div class="card">
+            <img src="assets/gambar4.jpg">
+            <div class="overlay"><p>Foto 4</p></div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
