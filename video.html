@@ -2,33 +2,35 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Treasure Video</title>
+<title>Video</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins', sans-serif;
 }
 
 body{
-    background: radial-gradient(circle,#020617,#1e293b);
-    color:#facc15;
+    font-family:'Poppins', sans-serif;
+    background: linear-gradient(135deg,#020617,#0f172a);
+    color:white;
 }
 
 /* Navbar */
 nav{
     display:flex;
     justify-content:space-between;
-    padding:20px 50px;
-    background: rgba(0,0,0,0.7);
+    align-items:center;
+    padding:20px 60px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
 }
 
 nav h1{
-    font-family:'Pirata One';
+    font-family:'Playfair Display', serif;
 }
 
 nav ul{
@@ -37,73 +39,89 @@ nav ul{
 }
 
 nav li{
-    margin-left:20px;
+    margin-left:30px;
 }
 
 nav a{
-    color:#facc15;
+    color:white;
     text-decoration:none;
+    position:relative;
 }
 
-nav a:hover{
-    color:white;
+nav a::after{
+    content:"";
+    position:absolute;
+    width:0;
+    height:2px;
+    background:#38bdf8;
+    left:0;
+    bottom:-5px;
+    transition:0.3s;
+}
+
+nav a:hover::after{
+    width:100%;
 }
 
 /* Container */
 .container{
-    text-align:center;
-    padding:50px;
+    padding:50px 80px;
 }
 
+/* Judul */
 .container h2{
-    font-family:'Pirata One';
-    font-size:2.5rem;
+    font-family:'Playfair Display', serif;
     margin-bottom:30px;
 }
 
-/* Treasure Chest (Video Box) */
-.video-box{
-    display:inline-block;
-    padding:20px;
-    border:4px solid gold;
-    border-radius:20px;
-    background: rgba(0,0,0,0.6);
-    box-shadow:0 0 25px rgba(250,204,21,0.6);
-    position:relative;
+/* Grid Video */
+.video-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
 }
 
-/* Icon peti */
-.video-box::before{
-    content:"🏴‍☠️";
-    position:absolute;
-    top:-20px;
-    left:-20px;
-    font-size:2rem;
+/* Card */
+.video-card{
+    background: rgba(255,255,255,0.05);
+    border-radius:20px;
+    padding:15px;
+    backdrop-filter: blur(10px);
+    box-shadow:0 10px 30px rgba(0,0,0,0.5);
+    transition:0.4s;
+}
+
+/* Hover */
+.video-card:hover{
+    transform:translateY(-10px);
 }
 
 /* Video */
 video{
-    width:600px;
-    max-width:100%;
+    width:100%;
     border-radius:15px;
 }
 
-/* Glow animation */
-@keyframes glow{
-    0%{box-shadow:0 0 10px gold;}
-    50%{box-shadow:0 0 30px gold;}
-    100%{box-shadow:0 0 10px gold;}
+/* Judul video */
+.video-card h3{
+    margin-top:10px;
+    font-weight:500;
 }
 
-.video-box:hover{
-    animation:glow 1.5s infinite;
+/* Animasi */
+.video-card{
+    animation:fadeUp 1s ease forwards;
 }
 
-/* Caption */
-.caption{
-    margin-top:15px;
-    font-style:italic;
-    opacity:0.8;
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 </style>
 
@@ -112,7 +130,7 @@ video{
 <body>
 
 <nav>
-    <h1>Treasure Video 🎥</h1>
+    <h1>XilhamBillabong Website</h1>
     <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="biodata.html">Biodata</a></li>
@@ -122,15 +140,32 @@ video{
 </nav>
 
 <div class="container">
-    <h2>My Kontrakan</h2>
+    <h2>Video Saya</h2>
 
-    <div class="video-box">
-        <video controls>
-            <source src="assets/video.mp4" type="video/mp4">
-        </video>
-        <div class="caption">Jangan Lupa di Tonton</div>
+    <div class="video-grid">
+
+        <div class="video-card">
+            <video controls>
+                <source src="assets/video1.mp4" type="video/mp4">
+            </video>
+            <h3>Video 1</h3>
+        </div>
+
+        <div class="video-card">
+            <video controls>
+                <source src="assets/video2.mp4" type="video/mp4">
+            </video>
+            <h3>Video 2</h3>
+        </div>
+
+        <div class="video-card">
+            <video controls>
+                <source src="assets/video3.mp4" type="video/mp4">
+            </video>
+            <h3>Video 3</h3>
+        </div>
+
     </div>
-
 </div>
 
 </body>
