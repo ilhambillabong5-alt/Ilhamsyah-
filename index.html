@@ -1,93 +1,137 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<title>Home</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
-<style>
-*{
-    margin:0; padding:0; box-sizing:border-box;
-    font-family:'Poppins', sans-serif;
+/* Reset & Font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
 }
 
-body{
-    background: linear-gradient(135deg,#0ea5e9,#6366f1);
-    color:white;
+body {
+    background-color: #f8fafc;
+    color: #1e293b;
 }
 
-/* Navbar */
-nav{
-    display:flex;
-    justify-content:space-between;
-    padding:20px 50px;
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(10px);
+/* Navigasi */
+header {
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-nav ul{
-    display:flex;
-    list-style:none;
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 85%;
+    margin: auto;
 }
 
-nav ul li{
-    margin-left:25px;
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e293b;
 }
 
-nav a{
-    color:white;
-    text-decoration:none;
-    transition:0.3s;
+.logo span {
+    color: #10b981;
 }
 
-nav a:hover{
-    color:#facc15;
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
 }
 
-/* Hero */
-.hero{
-    height:90vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    animation: fadeIn 2s;
+nav ul li {
+    margin-left: 25px;
 }
 
-.hero h2{
-    font-size:3rem;
+nav ul li a {
+    text-decoration: none;
+    color: #64748b;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
-.hero p{
-    margin-top:10px;
-    opacity:0.8;
+nav ul li a:hover {
+    color: #10b981;
 }
 
-@keyframes fadeIn{
-    from{opacity:0; transform:translateY(30px);}
-    to{opacity:1; transform:translateY(0);}
+.btn-nav {
+    background: #10b981;
+    color: white !important;
+    padding: 8px 20px;
+    border-radius: 8px;
 }
-</style>
-</head>
 
-<body>
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+}
 
-<nav>
-    <h1>MyWebsite</h1>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="biodata.html">Biodata</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="video.html">Video</a></li>
-    </ul>
-</nav>
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
 
-<section class="hero">
-    <h2>Assalamualaikum WR.WB, Selamat Datang 👋</h2>
-    <p> Di Website pribadi XilhamBillabong</p>
-</section>
+.highlight {
+    color: #10b981;
+}
 
-</body>
-</html>
+.hero p {
+    color: #64748b;
+    max-width: 600px;
+    margin: auto;
+    font-size: 1.1rem;
+}
+
+/* Cards / Stats Section */
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 85%;
+    margin: 20px auto 60px auto;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #10b981;
+}
+
+.card h3 {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.card .amount {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.trend {
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.trend.up { color: #059669; }
+.trend.down { color: #dc2626; }
+
+/* Footer */
+footer {
+    background: #1e293b;
+    color: #94a3b8;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 40px;
+}
