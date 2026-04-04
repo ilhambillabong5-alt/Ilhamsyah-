@@ -2,9 +2,9 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Gallery</title>
+<title>Treasure Gallery</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
 
 <style>
 *{
@@ -15,8 +15,8 @@
 }
 
 body{
-    background: linear-gradient(135deg,#0f172a,#1e293b);
-    color:white;
+    background: radial-gradient(circle,#1e293b,#020617);
+    color:#facc15;
 }
 
 /* Navbar */
@@ -24,8 +24,12 @@ nav{
     display:flex;
     justify-content:space-between;
     padding:20px 50px;
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(10px);
+    background: rgba(0,0,0,0.6);
+}
+
+nav h1{
+    font-family:'Pirata One';
+    color:#facc15;
 }
 
 nav ul{
@@ -38,13 +42,13 @@ nav li{
 }
 
 nav a{
-    color:white;
+    color:#facc15;
     text-decoration:none;
     transition:0.3s;
 }
 
 nav a:hover{
-    color:#38bdf8;
+    color:white;
 }
 
 /* Container */
@@ -54,25 +58,29 @@ nav a:hover{
 }
 
 .container h2{
+    font-family:'Pirata One';
+    font-size:2.5rem;
     margin-bottom:20px;
 }
 
-/* Gallery Grid */
+/* Treasure Grid */
 .gallery{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+    gap:25px;
 }
 
-/* Card Image */
+/* Card */
 .card{
     position:relative;
-    overflow:hidden;
     border-radius:15px;
+    overflow:hidden;
+    border:3px solid #facc15;
+    box-shadow:0 0 20px rgba(250,204,21,0.5);
     cursor:pointer;
 }
 
-/* Gambar */
+/* Image */
 .card img{
     width:100%;
     height:100%;
@@ -84,34 +92,52 @@ nav a:hover{
 .overlay{
     position:absolute;
     bottom:0;
-    left:0;
     width:100%;
     height:100%;
-    background: rgba(0,0,0,0.6);
-    opacity:0;
+    background: rgba(0,0,0,0.7);
     display:flex;
     justify-content:center;
     align-items:center;
+    opacity:0;
     transition:0.5s;
 }
 
 /* Text */
 .overlay h3{
-    transform:translateY(20px);
-    transition:0.5s;
+    font-family:'Pirata One';
+    font-size:1.5rem;
+    color:#facc15;
+    text-shadow:0 0 10px gold;
 }
 
-/* Hover Effect */
+/* Hover effect */
 .card:hover img{
     transform:scale(1.2);
+    filter:brightness(0.6);
 }
 
 .card:hover .overlay{
     opacity:1;
 }
 
-.card:hover .overlay h3{
-    transform:translateY(0);
+/* Treasure icon */
+.card::before{
+    content:"💰";
+    position:absolute;
+    top:10px;
+    left:10px;
+    font-size:1.5rem;
+}
+
+/* Glow animation */
+@keyframes glow{
+    0%{box-shadow:0 0 10px gold;}
+    50%{box-shadow:0 0 25px gold;}
+    100%{box-shadow:0 0 10px gold;}
+}
+
+.card:hover{
+    animation:glow 1s infinite;
 }
 </style>
 
@@ -120,7 +146,7 @@ nav a:hover{
 <body>
 
 <nav>
-    <h1>MyWebsite</h1>
+    <h1>Treasure Gallery 🏴‍☠️</h1>
     <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="biodata.html">Biodata</a></li>
@@ -130,28 +156,28 @@ nav a:hover{
 </nav>
 
 <div class="container">
-    <h2>Gallery Saya</h2>
+    <h2>Harta Karun Saya 💎</h2>
 
     <div class="gallery">
 
         <div class="card">
             <img src="assets/gambar1.jpg">
             <div class="overlay">
-                <h3>Foto 1</h3>
+                <h3>Harta 1</h3>
             </div>
         </div>
 
         <div class="card">
             <img src="assets/gambar2.jpg">
             <div class="overlay">
-                <h3>Foto 2</h3>
+                <h3>Harta 2</h3>
             </div>
         </div>
 
         <div class="card">
             <img src="assets/gambar3.jpg">
             <div class="overlay">
-                <h3>Foto 3</h3>
+                <h3>Harta 3</h3>
             </div>
         </div>
 
