@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Gallery</title>
+<title>Foto</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
@@ -74,67 +74,49 @@ nav a:hover::after{
     margin-bottom:30px;
 }
 
-/* Gallery Grid */
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
+/* Grid Foto */
+.photo-grid{
+    columns:3 250px;
+    column-gap:20px;
 }
 
 /* Card */
-.card{
-    position:relative;
-    border-radius:20px;
+.photo-item{
+    margin-bottom:20px;
+    break-inside:avoid;
+    border-radius:15px;
     overflow:hidden;
     background: rgba(255,255,255,0.05);
     backdrop-filter: blur(10px);
-    box-shadow:0 10px 30px rgba(0,0,0,0.5);
+    box-shadow:0 10px 25px rgba(0,0,0,0.5);
     transition:0.4s;
 }
 
-/* Image */
-.card img{
+/* Gambar */
+.photo-item img{
     width:100%;
-    height:250px;
-    object-fit:cover;
+    display:block;
     transition:0.4s;
 }
 
-/* Overlay */
-.overlay{
-    position:absolute;
-    bottom:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background: rgba(0,0,0,0.6);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    opacity:0;
-    transition:0.4s;
-}
-
-/* Text */
-.overlay h3{
-    font-family:'Playfair Display', serif;
-}
-
-/* Hover Effect */
-.card:hover{
+/* Hover */
+.photo-item:hover{
     transform:translateY(-10px);
 }
 
-.card:hover img{
-    transform:scale(1.1);
+.photo-item:hover img{
+    transform:scale(1.05);
 }
 
-.card:hover .overlay{
-    opacity:1;
+/* Caption */
+.caption{
+    padding:10px;
+    font-size:0.9rem;
+    opacity:0.8;
 }
 
 /* Animasi */
-.card{
+.photo-item{
     animation:fadeUp 1s ease forwards;
 }
 
@@ -155,40 +137,44 @@ nav a:hover::after{
 <body>
 
 <nav>
-    <h1>XilhamBillabong Website</h1>
+    <h1>MyPortfolio</h1>
     <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="biodata.html">Biodata</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="video.html">Video</a></li>
-      <li><a href="lain-lain.html">Lain-lain</a></li>
+        <li><a href="foto.html">Foto</a></li>
     </ul>
 </nav>
 
 <div class="container">
-    <h2>Gallery My Shoot</h2>
+    <h2>Koleksi Foto</h2>
 
-    <div class="gallery">
+    <div class="photo-grid">
 
-        <div class="card">
-            <img src="depan rumah f.jpeg">
-            <div class="overlay">
-                <h3>Foto 1</h3>
-            </div>
+        <div class="photo-item">
+            <img src="assets/foto1.jpg">
+            <div class="caption">Kegiatan 1</div>
         </div>
 
-        <div class="card">
-            <img src="samping rumah f.jpeg">
-            <div class="overlay">
-                <h3>Foto 2</h3>
-            </div>
+        <div class="photo-item">
+            <img src="assets/foto2.jpg">
+            <div class="caption">Kegiatan 2</div>
         </div>
 
-        <div class="card">
-            <img src="belakang rumah foto.jpeg">
-            <div class="overlay">
-                <h3>Foto 3</h3>
-            </div>
+        <div class="photo-item">
+            <img src="assets/foto3.jpg">
+            <div class="caption">Kegiatan 3</div>
+        </div>
+
+        <div class="photo-item">
+            <img src="assets/foto4.jpg">
+            <div class="caption">Kegiatan 4</div>
+        </div>
+
+        <div class="photo-item">
+            <img src="assets/foto5.jpg">
+            <div class="caption">Kegiatan 5</div>
         </div>
 
     </div>
