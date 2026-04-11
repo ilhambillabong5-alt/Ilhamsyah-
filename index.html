@@ -1,181 +1,71 @@
 <!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<title>Indexs</title>
+    <label>Pendidikan</label>
+    <select name="pendidikan">
+      <option value="">Pilih</option>
+      <option>SD</option>
+      <option>SMP</option>
+      <option>SMA</option>
+      <option>D3</option>
+      <option>S1</option>
+      <option>S2</option>
+      <option>S3</option>
+    </select>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <h3>Data Bank</h3>
+    <label>Nama Bank</label>
+    <select name="bank">
+      <option value="">Pilih Bank</option>
+      <option>BRI</option>
+      <option>BCA</option>
+      <option>BNI</option>
+      <option>Mandiri</option>
+      <option>CIMB Niaga</option>
+    </select>
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+    <label>Nomor Rekening</label>
+    <input type="text" name="rekening">
 
-body{
-    font-family:'Poppins', sans-serif;
-    background: linear-gradient(135deg,#020617,#0f172a);
-    color:white;
-}
+    <h3>Data Transaksi</h3>
+    <label>Tanggal Transaksi</label>
+    <input type="date" name="tanggal_transaksi">
 
-/* Navbar */
-nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 60px;
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(10px);
-}
+    <label>Uraian Transaksi</label>
+    <textarea name="uraian"></textarea>
 
-nav h1{
-    font-family:'Playfair Display', serif;
-    font-size:1.5rem;
-}
-
-nav ul{
-    display:flex;
-    list-style:none;
-}
-
-nav li{
-    margin-left:30px;
-}
-
-nav a{
-    color:white;
-    text-decoration:none;
-    position:relative;
-}
-
-/* Underline animasi */
-nav a::after{
-    content:"";
-    position:absolute;
-    width:0;
-    height:2px;
-    background:#38bdf8;
-    left:0;
-    bottom:-5px;
-    transition:0.3s;
-}
-
-nav a:hover::after{
-    width:100%;
-}
-
-/* Hero Section */
-.hero{
-    height:90vh;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:0 80px;
-}
-
-/* Text */
-.hero-text{
-    max-width:500px;
-    animation:fadeUp 1.5s;
-}
-
-.hero-text h2{
-    font-family:'Playfair Display', serif;
-    font-size:3rem;
-    margin-bottom:15px;
-}
-
-.hero-text p{
-    opacity:0.7;
-    line-height:1.6;
-}
-
-/* Button */
-.btn{
-    display:inline-block;
-    margin-top:25px;
-    padding:12px 25px;
-    background:#38bdf8;
-    color:white;
-    border-radius:30px;
-    text-decoration:none;
-    transition:0.3s;
-}
-
-.btn:hover{
-    background:#0ea5e9;
-    transform:translateY(-3px);
-}
-
-/* Glass Card */
-.hero-card{
-    background: rgba(255,255,255,0.05);
-    padding:30px;
-    border-radius:20px;
-    backdrop-filter: blur(15px);
-    box-shadow:0 10px 40px rgba(0,0,0,0.5);
-    animation:fadeUp 2s;
-}
-
-.hero-card h3{
-    margin-bottom:10px;
-}
-
-/* Animasi */
-@keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(40px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-</style>
-
-</head>
-
-<body>
-
-<nav>
-    <h1>XilhamBillabong Website</h1>
-    <ul>
-        <li><a href="index.html">Indexs</a></li>
-        <li><a href="biodata.html">Biodata</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="video.html">Video</a></li>
-        <li><a href="Lain-lain.html">Koleksi</a></li>
-    </ul>
-</nav>
-
-<section class="hero">
-
-    <!-- Kiri -->
-    <div class="hero-text">
-        <h2>Selamat Datang👋</h2>
-        <p>
-            Ini adalah website pribadi saya yang menampilkan biodata, 
-            galeri, dan video. Semoga dapat nilai 100
-        </p>
-
-        <a href="biodata.html" class="btn">Lihat My Profil</a>
-        <a href="gallery.html" class="btn">Lihat My Gallery</a>
-        <a href="video.html" class="btn">Lihat My Video</a>
-        <a href="Lain-lain.html" class="btn">Lihat My Koleksi</a>
+    <label>Jenis Transaksi</label>
+    <div class="radio-group">
+      <label><input type="radio" name="jenis" value="Debit"> Debit</label>
+      <label><input type="radio" name="jenis" value="Kredit"> Kredit</label>
     </div>
 
-    <!-- Kanan -->
-    <div class="hero-card">
-        <h3>✨ My Website</h3>
-        <p>
-            Website ini dibuat untuk memberikan informasi sederhana tentang seorang mahasiswa aktif universitas lambung mangkurat
-            yang Berprestasi Aamiin.
-        </p>
-    </div>
+    <label>Jumlah Debit</label>
+    <input type="number" name="debit">
 
-</section>
+    <label>Jumlah Kredit</label>
+    <input type="number" name="kredit">
+
+    <button type="submit">Kirim Data</button>
+  </form>
+</div>
+
+<script>
+  const scriptURL = "https://script.google.com/macros/s/AKfycbyalltRZFRO5Ss9Dc0cyxf8lvo0rLSpyuc4W6o4SmZdPcaHQNkI1kuIq6r9PLe3xwnr/exec";
+  const form = document.getElementById('dataForm');
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    fetch(scriptURL, {
+      method: 'POST',
+      body: new FormData(form)
+    })
+    .then(response => {
+      alert("Data berhasil dikirim!");
+      form.reset();
+    })
+    .catch(error => alert("Gagal mengirim data"));
+  });
+</script>
 
 </body>
 </html>
