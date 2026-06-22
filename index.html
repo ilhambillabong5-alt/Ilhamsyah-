@@ -2,135 +2,342 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Indexs</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XilhamBillabong Website</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
+:root {
+    --bg-dark: #030712;
+    --bg-card: rgba(15, 23, 42, 0.45);
+    --border-color: rgba(255, 255, 255, 0.08);
+    --primary: #38bdf8;
+    --primary-hover: #0ea5e9;
+    --accent: #818cf8;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+}
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    font-family:'Poppins', sans-serif;
-    background: linear-gradient(135deg,#020617,#0f172a);
-    color:white;
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-dark);
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(129, 140, 248, 0.08) 0%, transparent 40%);
+    background-attachment: fixed;
+    color: var(--text-main);
+    min-height: 100vh;
+    line-height: 1.5;
 }
 
-/* Navbar */
-nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 60px;
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(10px);
+/* Floating Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 16px 32px;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    position: sticky;
+    top: 20px;
+    z-index: 100;
 }
 
-nav h1{
-    font-family:'Playfair Display', serif;
-    font-size:1.5rem;
+nav h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    background: linear-gradient(to right, #ffffff, var(--text-muted));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-nav ul{
-    display:flex;
-    list-style:none;
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 24px;
 }
 
-nav li{
-    margin-left:30px;
+nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.3s;
 }
 
-nav a{
-    color:white;
-    text-decoration:none;
-    position:relative;
+nav a:hover {
+    color: var(--primary);
 }
 
-/* Underline animasi */
-nav a::after{
-    content:"";
-    position:absolute;
-    width:0;
-    height:2px;
-    background:#38bdf8;
-    left:0;
-    bottom:-5px;
-    transition:0.3s;
+/* Tombol Kembali Custom */
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-main) !important;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.06);
+    padding: 6px 14px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
 }
 
-nav a:hover::after{
-    width:100%;
+.btn-back:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: var(--primary);
+    transform: translateX(-3px);
 }
 
-/* Hero Section */
-.hero{
-    height:90vh;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:0 80px;
+/* Hero Section Grid */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 40px 24px;
+    align-items: center;
+    min-height: calc(100vh - 160px);
 }
 
-/* Text */
-.hero-text{
-    max-width:500px;
-    animation:fadeUp 1.5s;
+/* Left Column */
+.hero-text {
+    animation: fadeUp 1s ease forwards;
 }
 
-.hero-text h2{
-    font-family:'Playfair Display', serif;
-    font-size:3rem;
-    margin-bottom:15px;
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    color: var(--primary);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-bottom: 20px;
 }
 
-.hero-text p{
-    opacity:0.7;
-    line-height:1.6;
+.hero-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    font-weight: 600;
 }
 
-/* Button */
-.btn{
-    display:inline-block;
-    margin-top:25px;
-    padding:12px 25px;
-    background:#38bdf8;
-    color:white;
-    border-radius:30px;
-    text-decoration:none;
-    transition:0.3s;
+.hero-text p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 30px;
 }
 
-.btn:hover{
-    background:#0ea5e9;
-    transform:translateY(-3px);
+/* Action Buttons */
+.hero-actions {
+    display: flex;
+    gap: 16px;
 }
 
-/* Glass Card */
-.hero-card{
-    background: rgba(255,255,255,0.05);
-    padding:30px;
-    border-radius:20px;
-    backdrop-filter: blur(15px);
-    box-shadow:0 10px 40px rgba(0,0,0,0.5);
-    animation:fadeUp 2s;
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
-.hero-card h3{
-    margin-bottom:10px;
+.btn-primary {
+    background: var(--primary);
+    color: #000;
 }
 
-/* Animasi */
-@keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(40px);
+.btn-primary:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--text-muted);
+    transform: translateY(-2px);
+}
+
+/* Dashboard Panel (Right Side) */
+.hero-dashboard {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 30px;
+    border-radius: 24px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    animation: fadeUp 1.2s ease forwards;
+}
+
+.dashboard-header {
+    margin-bottom: 24px;
+}
+
+.dashboard-header h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.dashboard-header p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Bento Grid Tasks */
+.task-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.task-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 16px;
+    text-decoration: none;
+    color: var(--text-main);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.task-card .task-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+}
+
+.task-card h4 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.task-card p {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.task-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--primary);
+    transform: translateY(-3px);
+}
+
+.task-card:hover .task-icon {
+    background: rgba(56, 189, 248, 0.1);
+    color: var(--primary);
+}
+
+/* Highlight Task Card */
+.task-card.highlight {
+    grid-column: span 2;
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.08), rgba(129, 140, 248, 0.08));
+    border-color: rgba(56, 189, 248, 0.2);
+}
+
+.task-card.highlight:hover {
+    border-color: var(--accent);
+}
+
+/* Animations */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
-    to{
-        opacity:1;
-        transform:translateY(0);
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+        padding-top: 20px;
+    }
+    .hero-text {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .hero-actions {
+        justify-content: center;
+    }
+    nav {
+        margin: 10px;
+        width: calc(100% - 20px);
+    }
+}
+
+@media (max-width: 640px) {
+    nav {
+        flex-direction: column;
+        gap: 16px;
+        padding: 16px;
+    }
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 16px;
+    }
+    .hero-text h2 {
+        font-size: 2.5rem;
+    }
+    .task-grid {
+        grid-template-columns: 1fr;
+    }
+    .task-card.highlight {
+        grid-column: span 1;
+    }
+    .hero-actions {
+        flex-direction: column;
     }
 }
 </style>
@@ -140,7 +347,17 @@ nav a:hover::after{
 <body>
 
 <nav>
-    <h1>XilhamBillabong Website</h1>
+    <div style="display: flex; align-items: center; gap: 16px;">
+        <a href="../index kelompok.html" class="btn-back">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Kembali
+        </a>
+        <h1>XilhamBillabong</h1>
+    </div>
+    
     <ul>
         <li><a href="index.html">Indexs</a></li>
         <li><a href="biodata.html">Biodata</a></li>
@@ -154,27 +371,74 @@ nav a:hover::after{
 
     <!-- Kiri -->
     <div class="hero-text">
-        <h2>Selamat Datang👋</h2>
+        <span class="badge">Selamat Datang 👋</span>
+        <h2>Website Portofolio</h2>
         <p>
-            Ini adalah website ilhamsyah 
-            
+            Halaman personal ini dikembangkan untuk mendokumentasikan biodata diri, galeri visual, video kreatif, serta repositori pengerjaan tugas akademik secara interaktif.
         </p>
 
-        <a href="biodata.html" class="btn">Lihat My Profil</a>
-        <a href="tugas2.html" class="btn">Lihat tugas 2 Form Demografi</a>
-        <a href="https://forms.gle/tZapLYbHtzEsJtAt6" class="btn">Lihat tugas 3</a>
-        <a href="https://datastudio.google.com/reporting/f91eacaa-d139-4cc0-a2da-b38ad170e85d" class="btn">Sajian Data Tugas 3</a>
-        <a href="https://forms.gle/gz7KY2BzbjwkswS7A" class="btn">Lihat tugas 4</a>
-        <a href="sajian data tugas 4.html" class="btn">Sajian Data Tugas 4</a>
-        <a href="produksi.html" class="btn">Tugas Akhir</a>
+        <div class="hero-actions">
+            <a href="biodata.html" class="btn btn-primary">Lihat Profil</a>
+            <a href="produksi.html" class="btn btn-secondary">Tugas Akhir</a>
+        </div>
     </div>
 
-    <!-- Kanan -->
-    <div class="hero-card">
-        <h3>✨ My Website</h3>
-        <p>
-            Website ini dibuat untuk menyelesaikan tugas mata kuliah Sistem Informasi Manajemen Perikanan, Semester 6 (Enam) Fakultas Perikanan dan Ilmu Perikanan, Universitas lambung mangkurat.
-        </p>
+    <!-- Kanan: Dashboard Interaktif Tugas -->
+    <div class="hero-dashboard">
+        <div class="dashboard-header">
+            <h3>✨ Kumpulan Tugas & Sajian Data</h3>
+            <p>Silakan pilih tugas yang ingin Anda tinjau di bawah ini.</p>
+        </div>
+        
+        <div class="task-grid">
+            <a href="tugas2.html" class="task-card">
+                <div class="task-icon">📋</div>
+                <div>
+                    <h4>Tugas 2</h4>
+                    <p>Form Demografi</p>
+                </div>
+            </a>
+            
+            <a href="https://forms.gle/tZapLYbHtzEsJtAt6" target="_blank" class="task-card">
+                <div class="task-icon">📝</div>
+                <div>
+                    <h4>Tugas 3</h4>
+                    <p>Form Kuesioner</p>
+                </div>
+            </a>
+
+            <a href="https://datastudio.google.com/reporting/f91eacaa-d139-4cc0-a2da-b38ad170e85d" target="_blank" class="task-card">
+                <div class="task-icon">📊</div>
+                <div>
+                    <h4>Sajian Data T3</h4>
+                    <p>Looker Studio</p>
+                </div>
+            </a>
+
+            <a href="https://forms.gle/gz7KY2BzbjwkswS7A" target="_blank" class="task-card">
+                <div class="task-icon">✍️</div>
+                <div>
+                    <h4>Tugas 4</h4>
+                    <p>Form Input Baru</p>
+                </div>
+            </a>
+
+            <a href="sajian data tugas 4.html" class="task-card">
+                <div class="task-icon">💻</div>
+                <div>
+                    <h4>Sajian Data T4</h4>
+                    <p>Visualisasi Web</p>
+                </div>
+            </a>
+
+            <a href="produksi.html" class="task-card highlight">
+                <div class="task-icon">🚀</div>
+                <div>
+                    <h4>Tugas Akhir</h4>
+                    <p>Karya Produksi Akhir Akademik</p>
+                </div>
+            </a>
+        </div>
     </div>
 
 </section>
